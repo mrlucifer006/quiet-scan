@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+body {
+    background: url("{{ url_for('static', filename='img/bg.jpg') }}") no-repeat center center fixed;
+    background-size: cover;
+}
+</style>
+<div class="container">
+    <h1 class="main-heading">About the Smart Surveillance System</h1>
+    <p class="intro">
+        The Smart Surveillance System is an innovative monitoring platform designed to enhance community safety through the integration of real-time audio and video analysis. This system actively listens for signs of distress or quarrels and automatically captures evidence using strategically placed cameras.
+    </p>
+
+    <h2 class="section-heading">Purpose</h2>
+    <p>
+        Our goal is to enable institutions and local authorities to monitor public areas, hostels, or high-risk zones without the need for constant manual supervision. By combining machine learning and automation, this system detects unusual noise levels and instantly triggers recording mechanisms.
+    </p>
+
+    <h2 class="section-heading">Key Features</h2>
+    <ul>
+        <li>Real-time quarrel detection using noise analysis</li>
+        <li>Automated camera activation upon incident detection</li>
+        <li>Secure storage of video and audio evidence</li>
+        <li>User-friendly interface for monitoring and reviewing events</li>
+        <li>Easy deployment in schools, hostels, rural areas, and public spaces</li>
+    </ul>
+
+    <h2 class="section-heading">Technology Stack</h2>
+    <ul>
+        <li>Flask (Python) for backend development</li>
+        <li>HTML, CSS, and Jinja2 for frontend templating</li>
+        <li>Microphone-based sound surveillance logic</li>
+        <li>CSV-based or database-backed authentication</li>
+    </ul>
+
+    <h2 class="section-heading">Future Enhancements</h2>
+    <ul>
+        <li>Integration with real-time mobile notifications</li>
+        <li>Machine learning models for fight vs. normal conversation detection</li>
+        <li>Cloud storage and dashboard for remote administrators</li>
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sound Detection Dashboard</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        .sound-type-icon {
+            font-size: 2.5rem;
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+        .card-sound {
+            transition: box-shadow 0.2s;
+        }
+        .card-sound:hover {
+            box-shadow: 0 4px 20px #bfbfbf70;
+        }
+        .dashboard-container {
+            margin-top: 40px;
+        }
+        .btn-stop, .btn-logout {
+            margin-right: 10px;
+        }
+    </style>
+    <!-- Optionally add nice icons: -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Sound Detection Dashboard</span>
+            <div class="d-flex">
+                <a href="{{ url_for('stop') }}" class="btn btn-danger btn-stop">Stop Detection</a>
+                <a href="{{ url_for('login') }}" class="btn btn-secondary btn-logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container dashboard-container">
+        <div class="row mb-4">
+            <div class="col">
+                <h2>Latest Detection</h2>
+            </div>
+            <div class="col text-end">
+                <a href="{{ url_for('home') }}" class="btn btn-outline-primary">Home</a>
+                <a href="{{ url_for('about') }}" class="btn btn-outline-secondary">About</a>
+                <a href="{{ url_for('team') }}" class="btn btn-outline-secondary">Team</a>
+                <a href="{{ url_for('contact') }}" class="btn btn-outline-secondary">Contact</a>
+            </div>
+        </div>
+
+        {% if detection %}
+            {% set sound = detection.sound if detection.sound is defined else detection['sound'] %}
+            {% set location = detection.location if detection.location is defined else detection.get('location', 'N/A') %}
+            {% set image = detection.image_path if detection.image_path is defined else detection.get('image_path', None) %}
+            {% set time = detection.time if detection.time is defined else detection['time'] %}
+            <div class="card card-sound mb-3">
+                <div class="card-body d-flex align-items-center">
+                    <div>
+                        {# Display icon based on sound type #}
+                        {% if sound|lower == 'speech' %}
+                            <i class="bi bi-mic-fill text-success sound-type-icon"></i>
+                        {% elif sound|lower == 'music' %}
+                            <i class="bi bi-music-note-beamed text-primary sound-type-icon"></i>
+                        {% elif sound|lower == 'noise' %}
+                            <i class="bi bi-exclamation-triangle-fill text-warning sound-type-icon"></i>
+                        {% else %}
+                            <i class="bi bi-question-circle-fill text-secondary sound-type-icon"></i>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <h5 class="card-title mb-0"><strong>{{ sound | capitalize }}</strong></h5>
+                        <p class="card-text mb-0"><span class="fw-bold">Time:</span> {{ time }}</p>
+                        <p class="card-text mb-0"><span class="fw-bold">Location:</span> {{ location }}</p>
+                        {% if image %}
+                            <div class="mt-2">
+                                <img src="{{ url_for('static', filename=image.replace('static/', '')) }}"
+                                     alt="Detection Image" class="img-thumbnail" style="max-width:200px;">
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="alert alert-info">
+                No sound detected yet.
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

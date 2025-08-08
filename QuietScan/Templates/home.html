@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+body {
+    background: url("{{ url_for('static', filename='img/bg.jpg') }}") no-repeat center center fixed;
+    background-size: cover;
+}
+</style>
+<div class="container">
+    <h1 class="main-heading">Welcome to QuietScan – Smart Surveillance System</h1>
+
+    <p class="intro">
+        QuietScan is a cutting-edge system that combines real-time voice surveillance and smart image capture
+        to detect domestic quarrels and ensure safety within your environment.
+    </p>
+
+    <h2 class="section-heading">🔊 Voice Detection + 📸 Smart Capture</h2>
+    <p>
+        Our system actively monitors for signs of quarrels or loud disturbances. Upon detection,
+        it automatically triggers the camera to capture images as evidence, all while logging the
+        incident for review. It's a powerful integration of audio analysis and computer vision.
+    </p>
+
+    <h2 class="section-heading">👤 User-Friendly and Secure</h2>
+    <p>
+        With easy-to-use login and registration features, users can securely access the system dashboard,
+        monitor real-time alerts, and view historical incident data—all through a sleek and responsive interface.
+    </p>
+
+    <h2 class="section-heading">💡 Why Choose QuietScan?</h2>
+    <ul>
+        <li>AI-powered quarrel detection</li>
+        <li>Instant image capture during disturbances</li>
+        <li>Real-time monitoring & alert system</li>
+        <li>Secure and privacy-aware design</li>
+        <li>Simple interface for quick access</li>
+    </ul>
+
+    <h2 class="section-heading">🚀 Ready to Get Started?</h2>
+    <p>
+        Your safety starts here. 
+        <a href="{{ url_for('register') }}">Register now</a> to create your account,
+        or <a href="{{ url_for('login') }}">log in</a> if you're already a user.
+    </p>
+</div>
+{% endblock %}

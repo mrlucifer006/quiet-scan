@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+body {
+    background: url("{{ url_for('static', filename='img/bg.jpg') }}") no-repeat center center fixed;
+    background-size: cover;
+}
+</style>
+<div class="container">
+    <h1 class="main-heading">Our Team</h1>
+    <p class="intro">
+        Meet the passionate and dedicated minds behind the Smart Surveillance System. Our team comprises driven individuals focused on building impactful technological solutions for community safety.
+    </p>
+
+    <div class="team-section">
+        <div class="team-member">
+            <h2 class="section-heading">Ramkumar V</h2>
+            <p><strong>Role:</strong> Project Lead</p>
+            <p>Ramkumar leads the development and coordination of the Smart Surveillance System, ensuring smooth integration of all modules and overseeing the complete lifecycle of the project.</p>
+        </div>
+
+        <div class="team-member">
+            <h2 class="section-heading">Reshekumar V</h2>
+            <p><strong>Role:</strong> Frontend Developer</p>
+            <p>Reshekumar focuses on designing and developing the client-side interface using clean and modern HTML and CSS. He ensures that each page delivers a seamless, user-friendly experience, maintaining a consistent visual style and responsive layout across devices. His contribution shapes the visual identity and usability of the Smart Surveillance System.</p>
+        </div>
+
+        <div class="team-member">
+            <h2 class="section-heading">Naveen S</h2>
+            <p><strong>Role:</strong> Backend Designer</p>
+            <p>Naveen focuses on Python-Flask backend development and system integration, ensuring a secure and responsive communication flow between user interfaces and hardware.</p>
+        </div>
+
+        <div class="team-member">
+            <h2 class="section-heading">Sanjai MS</h2>
+            <p><strong>Role:</strong>Hardware & Audio Integration</p>
+            <p>Sanjai handles the hardware components and microphone integration, ensuring accurate sound detection and smooth hardware-software interaction.</p>
+        </div>
+
+        <div class="team-member">
+            <h2 class="section-heading">Sanjay Kumar S</h2>
+            <p><strong>Role:</strong>Testing & Validation</p>
+            <p>Sanjay rigorously tests the system across different use cases, ensures reliability under real-time conditions, and helps with troubleshooting.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
