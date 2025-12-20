@@ -1,0 +1,7 @@
+flask
+sounddevice
+opencv-python-headless
+tensorflow
+tensorflow-hub
+pandas
+numpy
