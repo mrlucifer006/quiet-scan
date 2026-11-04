@@ -1,0 +1,37 @@
+<?php
+require_once __DIR__ . '/config.php';
+$page_title = "Our Team – QuietScan";
+include __DIR__ . '/includes/header.php';
+include __DIR__ . '/includes/navbar.php';
+?>
+
+<div class="content">
+    <div class="container">
+        <h1 class="main-heading">Our Team</h1>
+        <p class="intro">
+            Meet the passionate and dedicated minds behind the Smart Surveillance System. Our team comprises driven individuals focused on building impactful technological solutions for community safety.
+        </p>
+
+        <div class="team-section">
+            <div class="team-member">
+                <h2 class="section-heading"><i class="bi bi-person-badge"></i> Pon Prathakshana G</h2>
+                <span class="role-badge">Project Lead & Frontend Developer</span>
+                <p>Pon Prathakshana G leads the development and coordination of the IQ holders team, overseeing the complete project lifecycle and ensuring smooth integration of all modules. She also focuses on designing and developing the client-side interface using clean and modern HTML and CSS, delivering a seamless, user-friendly experience with a consistent visual style and responsive layout across devices. Her contribution plays a key role in shaping the visual identity and usability of the system.</p>
+            </div>
+
+            <div class="team-member">
+                <h2 class="section-heading"><i class="bi bi-terminal-split"></i> Sanjai M S</h2>
+                <span class="role-badge">Backend Developer & Hardware Integration</span>
+                <p>Sanjai focuses on Python-Flask backend development and system integration, ensuring a secure and responsive communication flow between user interfaces and hardware, while also handling hardware components and microphone integration to achieve accurate sound detection and seamless hardware-software interaction.</p>
+            </div>
+
+            <div class="team-member">
+                <h2 class="section-heading"><i class="bi bi-palette"></i> Razeena Tasneem B</h2>
+                <span class="role-badge">Testing & Validation | UI/UX Design</span>
+                <p>Razeena Tasneem is responsible for testing system validation across multiple scenarios to ensure accuracy, consistency, and reliability. As the UI/UX designer, she creates intuitive interfaces, optimizes user flows, and enhances the overall user experience. She also focuses on accessibility, gathers user feedback, and refines the design to deliver a seamless and visually appealing product.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php include __DIR__ . '/includes/footer.php'; ?>
